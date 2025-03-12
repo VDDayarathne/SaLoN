@@ -26,7 +26,6 @@
     <!-- footer -->
     @include('home.footer')
   
-
 </body>
 
 </html>
