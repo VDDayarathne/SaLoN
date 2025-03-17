@@ -64,16 +64,12 @@
             <div>
                 <table class="table_deg">
                     <tr>
-                        <th>Category Name</th>
-                        <th>Edit</th>   
+                        <th>Category Name</th>   
                         <th>Delete</th>              
                     </tr>
                     @foreach ($data as $data)
                     <tr>
                         <td>{{ $data->category_name }} </td>
-                        <td>
-                            <a class="btn btn-success" href="{{ url('edit_category', $data->id) }}">edit</a>
-                        </td>
                         <td>
                             <a class="btn btn-danger" onclick="confirmation(event)" href="{{ url('delete_category', $data->id) }}">delete</a>
                         </td>
