@@ -35,6 +35,53 @@ class AdminController extends Controller
         return  redirect()->back();
     }
 
-    
+    public function edit_category($id)
+    {
+        $data = Category::find($id);
+        return view('admin.edit_category', compact('data'));
+    }
+
+    public function update_category(Request $request,$id)
+    {
+        $data = category::find($id);
+        $data->category_name=$request->category;
+        $data->save();
+        toastr()->timeOut(2000)->closeButton()->addSuccess('Category Updated Succesfully.');
+
+        return redirect('/view_category');
+    }
+
+    public function add_product()
+    {
+        $category = Category::all();
+        return view('admin.add_product', compact('category'));
+    }
+
+    public function upload_product(Request $request)
+    {
+        $data = new Product;
+        $data->title = $request->title;
+        $data->description = $request->description;
+        $data->price = $request->price;
+        $data->quantity = $request->qty;
+        $data->category = $request->category;
+        $image = $request->image;
+        if($image)
+        {
+            $imagename = time().'.'.$image->getClientOriginalExtension();
+            $request->image->move('products',$imagename);
+            $data->image = $imagename;
+        }
+        $data->save();
+        toastr()->timeOut(2000)->closeButton()->addSuccess('Item Added Succesfully.');
+
+        return redirect()->back();
+    } 
+
+    public function view_product()
+    {
+        $product = Product::all();
+        return view('admin.view_product',compact('product'));
+    }
 
 }
