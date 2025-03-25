@@ -13,7 +13,7 @@
         <div class="col-sm-6 col-md-4 col-lg-3">
           
           <div class="box">
-            <a href="">
+            
               
               <div class="img-box">
                 <img src="products\{{ $products->image }}" alt="">
@@ -22,12 +22,9 @@
                 <h6>{{ $products->title }}</h6>
                 <h6>Price<span>LKR.{{$products->price}}</span></h6>
               </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
+              <div style="padding: 10px">
+                <a class="btn btn-success" href="{{ url('product_details',$products->id) }}">Details</a>
               </div>
-            </a> 
             
           </div>
         </div>
