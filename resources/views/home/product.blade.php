@@ -24,6 +24,7 @@
               </div>
               <div style="padding: 10px">
                 <a class="btn btn-success" href="{{ url('product_details',$products->id) }}">Details</a>
+                <a class="btn btn-primary" href="{{ url('add_cart',$products->id) }}">Add to Cart</a>
               </div>
             
           </div>
