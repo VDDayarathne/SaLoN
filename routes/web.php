@@ -50,7 +50,7 @@ middleware(['auth','admin']);
 route::get('delete_product/{id}',[AdminController::class,'delete_product'])->
 middleware(['auth','admin']);
 
-route::get('update_product/{id}',[AdminController::class,'update_product'])->
+route::get('update_product/{slug}',[AdminController::class,'update_product'])->
 middleware(['auth','admin']);
 
 route::post('edit_product/{id}',[AdminController::class,'edit_product'])->
@@ -87,3 +87,10 @@ middleware(['auth','admin']);
 
 route::get('myorders',[HomeController::class,'myorders'])->
 middleware(['auth','verified']);
+
+Route::controller(HomeController::class)->group(function(){
+
+    Route::get('stripe/{value}', 'stripe');
+    Route::post('stripe/{value}', 'stripePost')->name('stripe.post');
+
+});
