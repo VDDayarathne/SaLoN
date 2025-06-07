@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AppointmentController;
+
 
 route::get('/', [HomeController::class, 'home']);
 
@@ -93,4 +95,15 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('stripe/{value}', 'stripe');
     Route::post('stripe/{value}', 'stripePost')->name('stripe.post');
 
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/book-appointment', [AppointmentController::class, 'create'])->name('appointment.create');
+    Route::post('/book-appointment', [AppointmentController::class, 'store'])->name('appointment.store');
+    Route::get('/my-appointments', [AppointmentController::class, 'index'])->name('appointment.index');
+    Route::delete('/cancel-appointment/{id}', [AppointmentController::class, 'cancelAppointment'])->name('cancel.appointment');
+});
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('appointments', [AppointmentController::class, 'adminView'])->name('appointment.admin');
 });
