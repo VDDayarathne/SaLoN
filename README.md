@@ -1,66 +1,116 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+SaLoN - Laravel-based Salon Management System
 
-## About Laravel
+SaLoN is a web-based salon management system built using the Laravel framework. It provides a modern solution for booking appointments, managing services, staff schedules, and customer interactions. This application is tailored for beauty salons, spas, and wellness centers to streamline their daily operations.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+🚀 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+✅ User Registration & Login (with role-based access)
+💇 Customer Appointment Booking System
+🗕️ Admin Appointment Approval & Conflict Handling
+❌ Appointment Cancellation (User Side)
+🧑‍💼 Staff Management
+💬 Customer Feedback System
+💵 Service Listings with Pricing
+📊 Dashboard with Key Metrics
+📱 Responsive UI for all devices
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+🛠️ Tech Stack
+Backend: Laravel 12
 
-## Learning Laravel
+Frontend: Blade
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Database: MySQL
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Authentication: Laravel Breeze / Fortify / Sanctum
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Other: Tailwind CSS
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+🛆 Installation
 
-### Premium Partners
+Clone the Repository
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+git clone https://github.com/VDDayarathne/SaLoN.git
+cd salon
 
-## Contributing
+Install Dependencies
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+composer install
+npm install && npm run dev
 
-## Code of Conduct
+Environment Configuration
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+cp .env.example .env
+php artisan key:generate
 
-## Security Vulnerabilities
+Database Setup
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Configure your .env file with correct DB credentials.
 
-## License
+Run migrations:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+php artisan migrate
+
+Seed (Optional)
+
+php artisan db:seed
+
+Run the Application
+
+php artisan serve
+
+🔐 Credentials (For Testing)
+
+Role
+
+Email
+
+Password
+
+Admin
+
+admin@example.com
+
+password
+
+Customer
+
+customer@example.com
+
+
+📸 Screenshots
+![Screenshot 2025-06-17 000348](https://github.com/user-attachments/assets/ab62ff6d-84a1-4d4a-8391-4a38cac18a5a)
+![Screenshot 2025-06-17 000256](https://github.com/user-attachments/assets/a5c88f03-3d46-4734-8244-610a235ed63d)
+![Screenshot 2025-06-17 003900](https://github.com/user-attachments/assets/c748ca31-7105-4171-b4cc-5539ab7ddd95)
+![Screenshot 2025-06-17 003835](https://github.com/user-attachments/assets/9ed87f24-b451-4b18-a63a-e9a0c17b878e)
+![Screenshot 2025-06-17 003755](https://github.com/user-attachments/assets/2e31d705-2c77-43bc-9314-6f4e71fb1148)
+![Screenshot 2025-06-17 003729](https://github.com/user-attachments/assets/93060b2a-c460-437d-99c0-3c844941a6e2)
+![Screenshot 2025-06-17 003658](https://github.com/user-attachments/assets/ec0ec8b9-465e-4337-9985-2b4fcc63be13)
+![Screenshot 2025-06-17 003520](https://github.com/user-attachments/assets/1870c909-b23b-4cbc-964b-09e817aa4b86)
+![Screenshot 2025-06-17 003426](https://github.com/user-attachments/assets/5cb62654-d627-4cee-a327-107639e50847)
+![Screenshot 2025-06-17 003025](https://github.com/user-attachments/assets/ff019a4b-c36d-43db-9550-05fe299d434a)
+![Screenshot 2025-06-17 003012](https://github.com/user-attachments/assets/0e7a3f08-697d-4e2b-bfc3-35af9393b57b)
+![Screenshot 2025-06-17 002825](https://github.com/user-attachments/assets/466dfc43-e970-464f-b001-9d7f59164b5d)
+![Screenshot 2025-06-17 000414](https://github.com/user-attachments/assets/c1be8e18-b80c-4599-80d8-fd046a2f8bb4)
+
+
+
+📂 Project Structure
+
+app/ - Main application code
+
+routes/web.php - Web routes
+
+resources/views/ - Blade templates
+
+public/ - Public assets
+
+database/migrations/ - DB schema
+
+config/ - Configuration files
+
+🤝 Contributing
+
+Feel free to fork this repo and contribute via pull requests. For major changes, please open an issue first to discuss what you'd like to change.
